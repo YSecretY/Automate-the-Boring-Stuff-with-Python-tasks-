@@ -1,0 +1,4 @@
+I decided to create my own task :)
+
+The goal is:
+    Create an app that will go to the website, download all the images and resize them to particular ?x? size, that user choose. (For example 500x500)
