@@ -1,5 +1,4 @@
 import requests
-from tqdm import tqdm
 from bs4 import BeautifulSoup as bs
 from urllib.parse import urljoin, urlparse
 import pyinputplus as pyip
@@ -21,7 +20,7 @@ def is_valid(url) -> bool:
 def get_images_urls(url) -> list:
     soup = bs(requests.get(url).content, "html.parser")  # get all the content from the page using beautiful soup
     urls = []
-    for img in tqdm(soup.find_all("img"), "Extracting images"):
+    for img in soup.find_all("img"):
         img_url = img.attrs.get("src")  # check if image contains src, else - skip it
         if not img_url:
             continue
